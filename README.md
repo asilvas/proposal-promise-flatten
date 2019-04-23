@@ -74,4 +74,4 @@ Doesn't get much simpler than this. Tests included.
 
 ## Discussion
 
-https://twitter.com/Aaron_Silvas/status/1120050278542090242
+https://twitter.com/Aaron_Silvas/status/1120721934730137601
