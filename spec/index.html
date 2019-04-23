@@ -3,10 +3,10 @@
 <link rel="stylesheet" href="./spec.css">
 <script src="./spec.js"></script>
 <pre class="metadata">
-title: `safeawait` keyword
+title: Promise.prototype.flatten
 status: proposal
 stage: 1
-location: https://github.com/asilvas/proposal-safeawait
+location: https://github.com/asilvas/proposal-promise-flatten
 copyright: true
 contributors:
   - Aaron Silvas
@@ -15,19 +15,22 @@ contributors:
 <emu-clause id="sec-intro">
   <h1>Introduction</h1>
 
-  <p>Background for <a href="https://github.com/asilvas/proposal-safeawait">tc39/proposal-safeawait</a>, inspired by <a href="https://twitter.com/DavidWells/status/1119729914876284928">David Wells</a>. Please report any <a href="https://github.com/asilvas/proposal-safeawait/issues">issues</a>.</p>
+  <p>
+    Background for <a href="https://github.com/asilvas/proposal-promise-flatten">tc39/proposal-promise-flatten</a>,
+    inspired by <a href="https://twitter.com/DavidWells/status/1119729914876284928">David Wells</a>.
+    Please report any <a href="https://github.com/asilvas/proposal-promise-flatten/issues">issues</a>.</p>
 
 </emu-clause>
 
-<emu-clause id="sec-safeawait">
-  <h1>safeawait _promise_</h1>
+<emu-clause id="sec-promise-flatten">
+  <h1>Promise.prototype.flatten()</h1>
 
-  <p>Built atop `await`, `safeawait` simply returns all outcomes of a Promise into a tuple `[rejectValue, resolveValue]`:</p>
+  <p>`flatten` resolves all outcomes of a Promise into a tuple `[rejectValue, resolveValue]` to reduce code footprint and improve readability:</p>
 
   <emu-alg>
     1. Always return a tuple.
-    1. Promise `reject` returned as-is at index zero of the returned tuple, or `undefined`.
-    1. Promise `resolve` returned as-is at index one of the returned tuple, or `undefined`.
-    1. Never throws.
+    1. Promise `reject` returned as-is at index zero of the returned tuple, or `undefined` on `resolve`.
+    1. Promise `resolve` returned as-is at index one of the returned tuple, or `undefined` on `reject`.
+    1. Never throws/rejects.
   </emu-alg>
 </emu-clause>

@@ -1,27 +1,32 @@
 {
-  "name": "proposal-safeawait",
+  "name": "proposal-promise-flatten",
   "version": "0.0.0",
-  "description": "TC39 Proposal for `safeawait` keyword",
+  "description": "TC39 Proposal for `Promise.prototype.flatten` function",
   "main": "index.js",
   "scripts": {
-    "build": "mkdir out && ecmarkup spec/index.html --js=out/spec.js --css=out/spec.css out/index.html",
-    "watch": "mkdir out && ecmarkup spec/index.html --js=out/spec.js --css=out/spec.css out/index.html --watch"
+    "build": "nyc mkdir -p out && ecmarkup spec/index.html --js=out/spec.js --css=out/spec.css out/index.html",
+    "cover": "nyc ava --verbose",
+    "prepublish": "npm run cover",
+    "test": "ava --verbose",
+    "watch": "nyc mkdir -p out && ecmarkup spec/index.html --js=out/spec.js --css=out/spec.css out/index.html --watch"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/asilvas/proposal-safeawait.git"
+    "url": "git+https://github.com/asilvas/proposal-promise-flatten.git"
   },
   "keywords": [
     "ecmascript",
     "tc39"
   ],
   "author": "Aaron Silvas",
-  "license": "https://tc39.github.io/ecma262/#sec-copyright-and-software-license",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/asilvas/proposal-safeawait/issues"
+    "url": "https://github.com/asilvas/proposal-promise-flatten/issues"
   },
-  "homepage": "https://github.com/asilvas/proposal-safeawait#readme",
+  "homepage": "https://github.com/asilvas/proposal-promise-flatten#readme",
   "devDependencies": {
-    "ecmarkup": "^3.16.0"
+    "ava": "^1.4.1",
+    "ecmarkup": "^3.16.0",
+    "nyc": "^14.0.0"
   }
 }
