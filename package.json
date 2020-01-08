@@ -1,8 +1,8 @@
 {
-  "name": "proposal-promise-flatten",
-  "version": "0.0.0",
+  "name": "@asilvas/promise-flatten",
+  "version": "0.1.0",
   "description": "TC39 Proposal for `Promise.prototype.flatten` function",
-  "main": "index.js",
+  "main": "polyfill.js",
   "scripts": {
     "build": "nyc mkdir -p out && ecmarkup spec/index.html --js=out/spec.js --css=out/spec.css out/index.html",
     "cover": "nyc ava --verbose",
@@ -17,6 +17,10 @@
   "keywords": [
     "ecmascript",
     "tc39"
+  ],
+  "files": [
+    "polyfill.js",
+    "README.md"
   ],
   "author": "Aaron Silvas",
   "license": "MIT",
