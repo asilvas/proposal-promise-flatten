@@ -1,6 +1,6 @@
 # `Promise.prototype.flatten` function
 
-- Spec in progress
+- [Spec in progress](http://asilvas.github.io/proposal-promise-flatten/)
 
 
 ## Champions
